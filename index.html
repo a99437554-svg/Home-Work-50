@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mecare — Healthcare</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'sans-serif'] },
+        colors: { brand: { DEFAULT: '#5BBFAA', dark: '#3FA892', light: '#E8F7F3' }, ink: '#0B1033' }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: #0B1033; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  img { background: #dff3ee; }
+</style>
+</head>
+<body class="bg-white antialiased overflow-x-hidden">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 font-semibold text-lg">
+      <span class="w-8 h-8 rounded-lg bg-brand flex items-center justify-center">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2-5 4 10 2-5h6"/></svg>
+      </span>
+      Mecare
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#home" class="hover:text-brand-dark">Home</a>
+      <a href="#service" class="hover:text-brand-dark">Service</a>
+      <a href="#doctors" class="hover:text-brand-dark">Doctors</a>
+      <a href="#pricing" class="hover:text-brand-dark">Pricing</a>
+    </nav>
+    <div class="hidden md:flex items-center gap-5 text-sm font-medium">
+      <a href="#doctors" class="hover:text-brand-dark">Join Doctor</a>
+      <a href="#appointment" class="bg-brand hover:bg-brand-dark transition text-white px-5 py-2 rounded-full">Get Appointment</a>
+    </div>
+    <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden border-t border-gray-100 bg-white px-4 pb-4">
+    <div class="flex flex-col py-2 text-sm font-medium">
+      <a href="#home" class="py-3 border-b border-gray-50">Home</a>
+      <a href="#service" class="py-3 border-b border-gray-50">Service</a>
+      <a href="#doctors" class="py-3 border-b border-gray-50">Doctors</a>
+      <a href="#pricing" class="py-3 border-b border-gray-50">Pricing</a>
+      <a href="#doctors" class="py-3">Join Doctor</a>
+    </div>
+    <a href="#appointment" class="block text-center bg-brand text-white px-5 py-3 rounded-full text-sm font-medium">Get Appointment</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="home" class="px-3 sm:px-6 pt-6">
+  <div class="max-w-6xl mx-auto rounded-3xl bg-gradient-to-b from-brand-light via-white to-brand-light/70 px-4 sm:px-10 pt-12 sm:pt-16 pb-8 sm:pb-12 text-center">
+    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight max-w-3xl mx-auto">
+      Meet our Healthcare Team: Committed to Your Well-Being
+    </h1>
+    <p class="mt-5 text-sm sm:text-base text-gray-600 max-w-xl mx-auto">
+      Our healthcare team combines expertise, compassion, and a commitment to your well-being, ensuring you receive personalized care.
+    </p>
+    <div class="mt-6 flex items-center justify-center gap-2">
+      <a href="#doctors" class="bg-brand hover:bg-brand-dark transition text-white text-sm font-medium px-5 py-2.5 rounded-full">Meet Our Consultations</a>
+      <div class="flex -space-x-2">
+        <img data-img src="https://i.pravatar.cc/80?img=12" class="w-8 h-8 rounded-full border-2 border-white object-cover" alt="">
+        <img data-img src="https://i.pravatar.cc/80?img=47" class="w-8 h-8 rounded-full border-2 border-white object-cover" alt="">
+        <img data-img src="https://i.pravatar.cc/80?img=33" class="w-8 h-8 rounded-full border-2 border-white object-cover" alt="">
+      </div>
+      <span class="w-8 h-8 rounded-full bg-brand text-white flex items-center justify-center text-lg leading-none">+</span>
+    </div>
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+      <img data-img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=80" alt="Healthcare team" class="w-full h-64 sm:h-80 object-cover rounded-2xl">
+      <img data-img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=80" alt="Doctor with patient" class="w-full h-64 sm:h-80 object-cover rounded-2xl">
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="flex items-center gap-3">
+      <span class="w-11 h-11 rounded-full bg-brand flex items-center justify-center shrink-0"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 012-2h8a2 2 0 012 2v16M16 9h2a2 2 0 012 2v10M8 7h4M8 11h4M8 15h4"/></svg></span>
+      <div><p class="font-semibold text-sm sm:text-base">500k+corp</p><p class="text-[11px] text-gray-500">Subscribed Hospitalizations</p></div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="w-11 h-11 rounded-full bg-brand flex items-center justify-center shrink-0"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></svg></span>
+      <div><p class="font-semibold text-sm sm:text-base">32+ Countries</p><p class="text-[11px] text-gray-500">Countries supports</p></div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="w-11 h-11 rounded-full bg-brand flex items-center justify-center shrink-0"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/></svg></span>
+      <div><p class="font-semibold text-sm sm:text-base">98% Satisfied</p><p class="text-[11px] text-gray-500">Satisfied users</p></div>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="w-11 h-11 rounded-full bg-brand flex items-center justify-center shrink-0"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 3h12M6 21h12M7 3c0 5 5 5 5 9s-5 4-5 9M17 3c0 5-5 5-5 9s5 4 5 9"/></svg></span>
+      <div><p class="font-semibold text-sm sm:text-base">Time Savings</p><p class="text-[11px] text-gray-500">By automating system</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PASSIONATE -->
+<section id="service" class="max-w-6xl mx-auto px-4 sm:px-6 pb-16 sm:pb-24">
+  <div class="grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">Passionate about care, committed to better.</h2>
+      <p class="mt-4 text-sm text-gray-600 max-w-sm">Our unwavering commitment to care motivates us to constantly strive for improvement.</p>
+      <a href="#" class="inline-flex items-center gap-1 mt-6 text-sm font-medium border border-gray-200 rounded-lg px-4 py-2 hover:bg-gray-50">Learn more ↗</a>
+      <div class="mt-10 grid grid-cols-3 gap-3 max-w-md">
+        <div>
+          <span class="w-9 h-9 rounded-lg bg-brand flex items-center justify-center mb-2"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>
+          <p class="text-xs font-semibold">Telemedicine Service</p>
+        </div>
+        <div>
+          <span class="w-9 h-9 rounded-lg bg-brand flex items-center justify-center mb-2"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a5 5 0 018-4 5 5 0 018 4c0 6-8 11-8 11z"/></svg></span>
+          <p class="text-xs font-semibold">Chronic Management</p>
+        </div>
+        <div>
+          <span class="w-9 h-9 rounded-lg bg-brand flex items-center justify-center mb-2"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+          <p class="text-xs font-semibold">Elderly Health Services</p>
+        </div>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="absolute -top-4 -right-2 w-24 h-24 bg-brand-light rounded-3xl -z-0"></div>
+      <img data-img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=900&q=80" alt="Doctor with child" class="relative w-full h-72 sm:h-96 object-cover rounded-3xl rounded-bl-[3rem]">
+    </div>
+  </div>
+</section>
+
+<!-- COMMITTED -->
+<section class="max-w-5xl mx-auto px-4 sm:px-6 pb-16 sm:pb-24 text-center">
+  <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Committed to Your Well-Being<br class="hidden sm:block"> at Every Stage</h2>
+  <p class="mt-4 text-sm text-gray-600 max-w-md mx-auto">We're dedicated to your well-being at every stage of life, providing personalized care and expert support tailored to your needs.</p>
+
+  <div class="relative mt-8 rounded-3xl overflow-hidden">
+    <img data-img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=80" alt="Care" class="w-full h-56 sm:h-96 object-cover">
+    <div class="absolute inset-0 bg-ink/20"></div>
+    <button class="absolute inset-0 m-auto w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-yellow-300 flex items-center justify-center shadow-lg ring-8 ring-brand/50 hover:scale-105 transition" aria-label="Play">
+      <svg class="w-6 h-6 text-ink ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z"/></svg>
+    </button>
+  </div>
+
+  <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+    <div class="rounded-2xl bg-[#CFF1E9] p-5">
+      <span class="w-9 h-9 rounded-full bg-white/70 flex items-center justify-center mb-8 text-brand-dark">♥</span>
+      <h3 class="font-semibold">Resident Care</h3>
+      <p class="mt-2 text-xs text-gray-700 leading-relaxed">Resident Care offers compassionate, comprehensive support in assisted living and nursing homes.</p>
+    </div>
+    <div class="rounded-2xl bg-[#FFDCDC] p-5">
+      <span class="w-9 h-9 rounded-full bg-white/70 flex items-center justify-center mb-8 text-red-400">✚</span>
+      <h3 class="font-semibold">Quality Healthcare</h3>
+      <p class="mt-2 text-xs text-gray-700 leading-relaxed">Quality Healthcare means providing exceptional medical services with a focus on patient-centered care.</p>
+    </div>
+    <div class="rounded-2xl bg-[#FFF3C4] p-5">
+      <span class="w-9 h-9 rounded-full bg-white/70 flex items-center justify-center mb-8 text-yellow-500">✆</span>
+      <h3 class="font-semibold">24/7 Support</h3>
+      <p class="mt-2 text-xs text-gray-700 leading-relaxed">Round-the-clock support for your healthcare needs, anytime, anywhere.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="pricing" class="max-w-5xl mx-auto px-4 sm:px-6 pb-16 sm:pb-24">
+  <div class="grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Benefits Tailored to You</h2>
+      <p class="mt-4 text-sm text-gray-600 max-w-sm">Experience personalized benefits designed to meet your unique needs. We prioritize your well-being by offering solutions.</p>
+      <img data-img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80" alt="Doctor" class="mt-6 w-full h-56 object-cover rounded-2xl">
+    </div>
+    <ul class="space-y-5">
+      <li class="flex gap-3"><span class="mt-0.5 w-5 h-5 rounded bg-brand-light text-brand-dark text-xs flex items-center justify-center shrink-0">✓</span><div><p class="text-sm font-semibold">Streamlined Appointment Scheduling</p><p class="text-xs text-gray-500">Easily book and manage your medical appointments online.</p></div></li>
+      <li class="flex gap-3"><span class="mt-0.5 w-5 h-5 rounded bg-brand-light text-brand-dark text-xs flex items-center justify-center shrink-0">✓</span><div><p class="text-sm font-semibold">Comprehensive Health Records</p><p class="text-xs text-gray-500">Access and manage all your health records in one secure location.</p></div></li>
+      <li class="flex gap-3"><span class="mt-0.5 w-5 h-5 rounded bg-brand-light text-brand-dark text-xs flex items-center justify-center shrink-0">✓</span><div><p class="text-sm font-semibold">Personalized Care Plans</p><p class="text-xs text-gray-500">Receive tailored care plans based on your health history and current needs.</p></div></li>
+      <li class="flex gap-3"><span class="mt-0.5 w-5 h-5 rounded bg-brand-light text-brand-dark text-xs flex items-center justify-center shrink-0">✓</span><div><p class="text-sm font-semibold">Expert Medical Team</p><p class="text-xs text-gray-500">Benefit from consultations with a team of highly qualified healthcare with top-notch medical care.</p></div></li>
+      <li class="flex gap-3"><span class="mt-0.5 w-5 h-5 rounded bg-brand-light text-brand-dark text-xs flex items-center justify-center shrink-0">✓</span><div><p class="text-sm font-semibold">Secure Communication</p><p class="text-xs text-gray-500">Get round-the-clock access to support and information, so whenever you need it.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- DOCTORS -->
+<section id="doctors" class="pb-16 sm:pb-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Designed for specialists<br class="hidden sm:block"> leading healthcare excellence.</h2>
+    <p class="mt-4 text-sm text-gray-600 max-w-lg mx-auto">Discover a platform designed for trailblazing specialists. Our resources empower leaders in healthcare innovation and excellence.</p>
+  </div>
+
+  <div id="slider" class="mt-10 flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory px-4 sm:px-6 lg:px-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]">
+    <!-- cards injected -->
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 mt-6 flex items-center justify-between">
+    <div class="flex gap-1.5"><span class="w-8 h-1.5 rounded-full bg-brand"></span><span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span><span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span></div>
+    <div class="flex gap-2">
+      <button id="prev" class="w-9 h-9 rounded-full border border-gray-200 hover:bg-gray-50" aria-label="Prev">←</button>
+      <button id="next" class="w-9 h-9 rounded-full bg-brand text-white hover:bg-brand-dark" aria-label="Next">→</button>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="appointment" class="px-4 sm:px-6 pb-16 sm:pb-24">
+  <div class="max-w-5xl mx-auto rounded-3xl bg-[#66D4BE] overflow-hidden relative">
+    <div class="grid md:grid-cols-2 gap-8 items-center p-6 sm:p-10">
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">Schedule Your Appointment with us</h2>
+        <p class="mt-4 text-sm text-ink/80 max-w-sm">We're here to help! Whether you have inquiries about our services, need assistance, or simply want more information, feel free to reach out.</p>
+        <a href="#" class="inline-block mt-6 bg-ink text-white text-sm font-medium px-5 py-2.5 rounded-full hover:opacity-90">Get Started</a>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-lg text-xs">
+        <div class="flex items-center justify-between font-semibold mb-3"><span>Monday, 28 aug 2024</span><span class="text-gray-400">‹ Today ›</span></div>
+        <div class="space-y-2">
+          <div class="rounded-md bg-[#CFF1E9] px-3 py-2 font-medium">Nick Hartsman</div>
+          <div class="rounded-md bg-ink text-white px-3 py-2 font-medium">Michael Scott</div>
+          <div class="rounded-md bg-[#FFB4B4] px-3 py-2 font-medium">Nick Hartsman</div>
+          <div class="rounded-md bg-[#BFE1F7] px-3 py-3 font-medium flex items-center gap-2">
+            <img data-img src="https://i.pravatar.cc/60?img=15" class="w-8 h-8 rounded-full object-cover" alt=""> Dr. Jim Halpert
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-gray-100">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+    <div>
+      <h4 class="font-semibold mb-4">Solutions</h4>
+      <ul class="space-y-2 text-gray-500 text-xs"><li>Electronic Health</li><li>Telehealth Services</li><li>Billing and Invoicing</li></ul>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-4">Company</h4>
+      <ul class="space-y-2 text-gray-500 text-xs"><li>About us</li><li>Blog</li><li>Career</li></ul>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-4">Get In Touch</h4>
+      <ul class="space-y-2 text-gray-500 text-xs"><li>(406) 555-0120</li><li>hqscare@gmail.com</li><li>2517 W. Gray St. Utica, Pennsylvania 57867</li></ul>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-4">Follow Us On</h4>
+      <div class="flex gap-4 text-gray-500 text-xs font-semibold"><a href="#">f</a><a href="#">in</a><a href="#">ig</a><a href="#">yt</a></div>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 pb-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-gray-500 border-t border-gray-100 pt-6">
+    <p>© 2024 Dmail, Inc. All rights reserved.</p>
+    <a href="#" class="flex items-center gap-2 font-semibold text-ink text-sm">
+      <span class="w-6 h-6 rounded-md bg-brand flex items-center justify-center"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span>Mecare
+    </a>
+    <div class="flex gap-5"><a href="#">terms of services</a><a href="#">Privacy Policy</a></div>
+  </div>
+</footer>
+
+<nav class="flex flex-wrap justify-center gap-2 px-4 pb-8" aria-label="Страницы">
+  <a href="./index.html" aria-current="page" class="rounded-md bg-teal-600 px-3 py-2 text-sm text-white">1</a>
+  <a href="./index2.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">2</a>
+  <a href="./index3.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">3</a>
+  <a href="./index4.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">4</a>
+  <a href="./index5.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">5</a>
+  <a href="./index6.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">6</a>
+  <a href="./index7.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">7</a>
+  <a href="./index8.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">8</a>
+  <a href="./index9.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">9</a>
+  <a href="./index10.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">10</a>
+  <a href="./index11.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">11</a>
+</nav>
+
+<script>
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  // Doctors slider
+  const doctors = [
+    'photo-1612349317150-e413f6a5b16d',
+    'photo-1594824476967-48c8b964273f',
+    'photo-1622253692010-333f2da6031d',
+    'photo-1537368910025-700350fe46c7',
+    'photo-1559839734-2b71ea197ec2',
+    'photo-1631217868264-e5b90bb7e133'
+  ];
+  const overlays = [
+    'from-brand/80', 'from-red-300/80', 'from-yellow-300/80',
+    'from-sky-300/80', 'from-red-300/80', 'from-brand/80'
+  ];
+  const slider = document.getElementById('slider');
+  doctors.forEach((id, i) => {
+    slider.insertAdjacentHTML('beforeend', `
+      <div class="snap-start shrink-0 w-[70%] sm:w-[40%] md:w-[30%] lg:w-[23%] relative rounded-2xl overflow-hidden h-72">
+        <img data-img src="https://images.unsplash.com/${id}?auto=format&fit=crop&w=500&q=80" alt="Hassan Qureshi" class="w-full h-full object-cover">
+        <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t ${overlays[i]} to-transparent"></div>
+        <div class="absolute bottom-3 left-4 text-white">
+          <p class="font-semibold text-sm">Hassan Qureshi</p>
+          <p class="text-[11px] opacity-90">Cardiologist</p>
+        </div>
+      </div>`);
+  });
+  const step = () => slider.clientWidth * 0.6;
+  document.getElementById('next').onclick = () => slider.scrollBy({ left: step(), behavior: 'smooth' });
+  document.getElementById('prev').onclick = () => slider.scrollBy({ left: -step(), behavior: 'smooth' });
+
+  // Image fallback: if a photo fails to load, show a clean placeholder
+  const fallback = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E8F7F3"/><stop offset="1" stop-color="#5BBFAA"/></linearGradient></defs><rect width="800" height="600" fill="url(#g)"/><path d="M370 230h60v110h110v60H430v110h-60V400H260v-60h110z" transform="translate(-30 -80) scale(1.15)" fill="#ffffff" opacity=".85"/></svg>'
+  );
+  function guard(img) {
+    img.addEventListener('error', function h() { img.removeEventListener('error', h); img.src = fallback; });
+    if (img.complete && img.naturalWidth === 0) img.src = fallback;
+  }
+  document.querySelectorAll('img[data-img]').forEach(guard);
+</script>
+</body>
+</html>

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecare - Comprehensive Healthcare & Medical Services</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            400: '#2dd4bf',
+                            500: '#5eead4', // Vibrant mint/teal accent
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            dark: '#0f172a',
+                            heading: '#0c1327',
+                            muted: '#526071'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome CDN for Medical & UI Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #4b5563;
+            background-color: #ffffff;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        /* Subtle glass effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-teal-100 selection:text-teal-900">
+
+    <!-- ========================================== -->
+    <!-- HEADER / NAVIGATION                        -->
+    <!-- ========================================== -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2.5 group">
+                    <div class="w-10 h-10 rounded-xl bg-teal-500 flex items-center justify-center text-white shadow-md shadow-teal-500/20 group-hover:scale-105 transition-transform duration-200">
+                        <i class="fa-solid fa-heart-pulse text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight text-brand-heading">Mecare</span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-sm font-medium text-slate-800 hover:text-teal-600 transition-colors">Home</a>
+                    <a href="#services" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">Service</a>
+                    <a href="#doctors" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">Doctors</a>
+                    <a href="#pricing" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">Pricing</a>
+                </nav>
+
+                <!-- Desktop Action Buttons -->
+                <div class="hidden md:flex items-center gap-5">
+                    <a href="#join" class="text-sm font-semibold text-slate-700 hover:text-teal-600 transition-colors">Join Doctor</a>
+                    <a href="#appointment" class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-slate-800 bg-[#63d3c1] hover:bg-[#4fc3b0] active:scale-95 transition-all duration-200 rounded-full shadow-sm hover:shadow-md">
+                        Get Appointment
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500" aria-label="Toggle Navigation Menu">
+                    <i id="menu-icon-open" class="fa-solid fa-bars text-xl"></i>
+                    <i id="menu-icon-close" class="fa-solid fa-xmark text-xl hidden"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-100 bg-white px-4 pt-3 pb-6 space-y-3 shadow-lg">
+            <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-800 bg-slate-50">Home</a>
+            <a href="#services" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">Service</a>
+            <a href="#doctors" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">Doctors</a>
+            <a href="#pricing" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">Pricing</a>
+            <div class="pt-4 border-t border-slate-100 flex flex-col gap-3">
+                <a href="#join" class="mobile-nav-link text-center py-2 text-sm font-semibold text-slate-700 hover:text-teal-600">Join Doctor</a>
+                <a href="#appointment" class="mobile-nav-link text-center w-full py-3 text-sm font-medium text-slate-800 bg-[#63d3c1] rounded-full shadow-sm">
+                    Get Appointment
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main>
+
+        <!-- ========================================== -->
+        <!-- HERO SECTION                              -->
+        <!-- ========================================== -->
+        <section id="home" class="relative pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden bg-gradient-to-b from-teal-50/50 via-teal-50/20 to-transparent">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                
+                <!-- Hero Heading -->
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-heading tracking-tight max-w-4xl mx-auto leading-[1.15]">
+                    Discover Our Complete<br class="hidden sm:inline"> Range of Services
+                </h1>
+                
+                <!-- Hero Subtitle -->
+                <p class="mt-5 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed">
+                    Explore the comprehensive suite of services we provide, designed to address all of your healthcare needs.
+                </p>
+
+                <!-- Hero CTA Button -->
+                <div class="mt-8 flex justify-center">
+                    <a href="#services" class="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-slate-800 bg-[#63d3c1] hover:bg-[#4fc3b0] active:scale-95 transition-all duration-200 rounded-full shadow-sm hover:shadow-lg hover:shadow-teal-500/20">
+                        Explore More
+                    </a>
+                </div>
+
+                <!-- Hero Doctor Image Card Container -->
+                <div class="mt-12 md:mt-16 relative max-w-5xl mx-auto">
+                    <!-- Soft Background Glow Effect -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-teal-200 to-emerald-200 blur-3xl opacity-30 rounded-3xl -z-10 transform scale-95"></div>
+                    
+                    <div class="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-slate-100 bg-white">
+                        <img 
+                            src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=1600" 
+                            alt="Medical Professional Caring Hands and High Tech Healthcare" 
+                            class="w-full h-auto min-h-[320px] max-h-[560px] object-cover object-top hover:scale-[1.01] transition-transform duration-700"
+                            onerror="this.src='https://placehold.co/1200x600/e0f2fe/0f766e?text=Medical+Care+Professional'"
+                        />
+                        <!-- Subtle Overlaid Medical Graphic Simulation -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SERVICES GRID SECTION                      -->
+        <!-- ========================================== -->
+        <section id="services" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-heading tracking-tight leading-tight">
+                        Comprehensive quality care<br>you need
+                    </h2>
+                </div>
+
+                <!-- 6 Service Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    
+                    <!-- 1. Cardiology -->
+                    <div class="group bg-white p-8 rounded-2xl border border-slate-100 hover:border-teal-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-rose-50 flex items-center justify-center text-rose-400 group-hover:scale-110 group-hover:bg-rose-100 transition-all duration-300 mb-6">
+                                <i class="fa-solid fa-heart-pulse text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">Cardiology</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                Cardiology specializes in heart care, using advanced technology to diagnose, treat, and prevent heart conditions.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-slate-50">
+                            <a href="#appointment" class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-700 hover:text-teal-600 transition-colors">
+                                Read more <span class="text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 2. Endocrinology -->
+                    <div class="group bg-white p-8 rounded-2xl border border-slate-100 hover:border-teal-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-500 group-hover:scale-110 group-hover:bg-amber-100 transition-all duration-300 mb-6">
+                                <i class="fa-solid fa-dna text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">Endocrinology</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                Endocrinology treats hormone disorders like diabetes and thyroid issues with expert, personalized care.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-slate-50">
+                            <a href="#appointment" class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-700 hover:text-teal-600 transition-colors">
+                                Read more <span class="text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 3. Neurology -->
+                    <div class="group bg-white p-8 rounded-2xl border border-slate-100 hover:border-teal-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center text-red-400 group-hover:scale-110 group-hover:bg-red-100 transition-all duration-300 mb-6">
+                                <i class="fa-solid fa-brain text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">Neurology</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                Neurology specializes in brain and nerve care, using advanced technology to diagnose, treat, and prevent conditions.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-slate-50">
+                            <a href="#appointment" class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-700 hover:text-teal-600 transition-colors">
+                                Read more <span class="text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 4. Eye care -->
+                    <div class="group bg-white p-8 rounded-2xl border border-slate-100 hover:border-teal-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-rose-50 flex items-center justify-center text-rose-400 group-hover:scale-110 group-hover:bg-rose-100 transition-all duration-300 mb-6">
+                                <i class="fa-solid fa-eye text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">Eye care</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                Get exceptional eye care with personalized exams and advanced treatments for clear, healthy vision.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-slate-50">
+                            <a href="#appointment" class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-700 hover:text-teal-600 transition-colors">
+                                Read more <span class="text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 5. Dentist -->
+                    <div class="group bg-white p-8 rounded-2xl border border-slate-100 hover:border-teal-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-rose-50 flex items-center justify-center text-rose-400 group-hover:scale-110 group-hover:bg-rose-100 transition-all duration-300 mb-6">
+                                <i class="fa-solid fa-tooth text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">Dentist</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                A dentist focuses on oral health, offering everything from cleanings to care, ensuring your smile stays healthy and bright.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-slate-50">
+                            <a href="#appointment" class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-700 hover:text-teal-600 transition-colors">
+                                Read more <span class="text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 6. Orthopedics -->
+                    <div class="group bg-white p-8 rounded-2xl border border-slate-100 hover:border-teal-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-rose-50 flex items-center justify-center text-rose-400 group-hover:scale-110 group-hover:bg-rose-100 transition-all duration-300 mb-6">
+                                <i class="fa-solid fa-bone text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">Orthopedics</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                Orthopedics specializes in treating bone, joint, and muscle issues, fractures, arthritis, and injuries to restore mobility and ease pain.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-slate-50">
+                            <a href="#appointment" class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-700 hover:text-teal-600 transition-colors">
+                                Read more <span class="text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- FAQ ACCORDION SECTION                      -->
+        <!-- ========================================== -->
+        <section id="pricing" class="py-16 md:py-24 bg-slate-50/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-heading tracking-tight">
+                        Find every answer you<br>need right here.
+                    </h2>
+                    <p class="mt-4 text-slate-500 text-base">
+                        Explore our comprehensive resources and FAQs to get all the information you need.
+                    </p>
+                </div>
+
+                <!-- FAQ Accordion Two-Column Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-start">
+                    
+                    <!-- Left Column (01 to 05) -->
+                    <div class="space-y-4">
+                        
+                        <!-- 01 (Open by default) -->
+                        <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden transition-all duration-200">
+                            <button type="button" class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
+                                <span class="font-semibold text-slate-900 text-base flex items-center gap-2">
+                                    <span>01. What services do you offer?</span>
+                                </span>
+                                <span class="faq-icon text-teal-500 font-bold text-xl ml-2">-</span>
+                            </button>
+                            <div class="faq-content px-6 pb-6 text-slate-500 text-sm leading-relaxed">
+                                We provide a wide range of medical services, including primary care, specialty consultations, preventive health screenings, diagnostic testing, and telemedicine. Our goal is to offer comprehensive care tailored to your needs.
+                            </div>
+                        </div>
+
+                        <!-- 02 -->
+                        <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden transition-all duration-200">
+                            <button type="button" class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
+                                <span class="font-semibold text-slate-900 text-base">02. How can I book an appointment?</span>
+                                <span class="faq-icon text-teal-400 font-bold text-xl ml-2">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 text-slate-500 text-sm leading-relaxed">
+                                You can easily book an appointment online using our 24/7 patient portal, by clicking the "Get Appointment" button above, or by calling our customer service team directly.
+                            </div>
+                        </div>
+
+                        <!-- 03 -->
+                        <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden transition-all duration-200">
+                            <button type="button" class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
+                                <span class="font-semibold text-slate-900 text-base">03. Do you offer telehealth services?</span>
+                                <span class="faq-icon text-teal-400 font-bold text-xl ml-2">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 text-slate-500 text-sm leading-relaxed">
+                                Yes! We offer secure virtual consultations with our licensed doctors for non-emergency conditions, follow-ups, and prescription management.
+                            </div>
+                        </div>
+
+                        <!-- 04 -->
+                        <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden transition-all duration-200">
+                            <button type="button" class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
+                                <span class="font-semibold text-slate-900 text-base">04. What is your cancellation policy?</span>
+                                <span class="faq-icon text-teal-400 font-bold text-xl ml-2">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 text-slate-500 text-sm leading-relaxed">
+                                We request at least 24 hours notice for cancellations or rescheduling to avoid a fee and allow other patients to access care.
+                            </div>
+                        </div>
+
+                        <!-- 05 -->
+                        <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden transition-all duration-200">
+                            <button type="button" class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
+                                <span class="font-semibold text-slate-900 text-base">05. What should I bring to my appointment?</span>
+                                <span class="faq-icon text-teal-400 font-bold text-xl ml-2">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 text-slate-500 text-sm leading-relaxed">
+                                Please bring a valid photo ID, your insurance card, a list of current medications, and any recent lab or imaging results related to your visit.
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column (06 to 10) -->
+                    <div class="space-y-4">
+                        
+                        <!-- 06 -->
+                        <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden transition-all duration-200">
+                            <button type="button" class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
+                                <span class="font-semibold text-slate-900 text-base">06. How do I get my test results?</span>
+                                <span class="faq-icon text-teal-400 font-bold text-xl ml-2">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 text-slate-500 text-sm leading-relaxed">
+                                Test results are securely uploaded to your online Mecare patient portal as soon as they are processed by our laboratory team.
+                            </div>
+                        </div>
+
+                        <!-- 07 -->
+                        <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden transition-all duration-200">
+                            <button type="button" class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
+                                <span class="font-semibold text-slate-900 text-base">07. Can I refill my prescription online?</span>
+                                <span class="faq-icon text-teal-400 font-bold text-xl ml-2">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 text-slate-500 text-sm leading-relaxed">
+                                Yes, existing patients can submit prescription renewal requests directly through our web or mobile application.
+                            </div>
+                        </div>
+
+                        <!-- 08 (Open by default) -->
+                        <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden transition-all duration-200">
+                            <button type="button" class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
+                                <span class="font-semibold text-slate-900 text-base">08. How do I contact my doctor after hours?</span>
+                                <span class="faq-icon text-teal-500 font-bold text-xl ml-2">-</span>
+                            </button>
+                            <div class="faq-content px-6 pb-6 text-slate-500 text-sm leading-relaxed">
+                                For urgent matters after hours, you can contact our on-call physician through our main phone line. For non-urgent inquiries, please leave a message, and we will get back to you during regular business hours.
+                            </div>
+                        </div>
+
+                        <!-- 09 -->
+                        <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden transition-all duration-200">
+                            <button type="button" class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
+                                <span class="font-semibold text-slate-900 text-base">09. What should I do if I have an emergency?</span>
+                                <span class="faq-icon text-teal-400 font-bold text-xl ml-2">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 text-slate-500 text-sm leading-relaxed">
+                                If you are experiencing a life-threatening medical emergency, please call 911 or go to the nearest hospital emergency room immediately.
+                            </div>
+                        </div>
+
+                        <!-- 10 -->
+                        <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden transition-all duration-200">
+                            <button type="button" class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
+                                <span class="font-semibold text-slate-900 text-base">10. How can I access my medical records online?</span>
+                                <span class="faq-icon text-teal-400 font-bold text-xl ml-2">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 text-slate-500 text-sm leading-relaxed">
+                                Log in to your verified Mecare account to view, download, or share your medical records, immunization history, and visit summaries.
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- CTA BANNER SECTION WITH SCHEDULING PREVIEW -->
+        <!-- ========================================== -->
+        <section id="appointment" class="py-12 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="relative bg-gradient-to-r from-[#4bd2be] via-[#52d6c3] to-[#40c7b3] rounded-3xl p-8 sm:p-12 lg:p-16 overflow-hidden shadow-2xl text-slate-900">
+                    
+                    <!-- Subtle Decorative Background Circles -->
+                    <div class="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-white/20 blur-xl pointer-events-none"></div>
+                    <div class="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-teal-300/30 blur-xl pointer-events-none"></div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                        
+                        <!-- Left Text Content -->
+                        <div class="lg:col-span-6 space-y-6 text-left">
+                            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                                Schedule Your Appointment with us
+                            </h2>
+                            <p class="text-slate-800 text-sm sm:text-base font-medium leading-relaxed max-w-lg">
+                                We're here to help! Whether you have inquiries about our services, need assistance, or simply want more information, feel free to reach out.
+                            </p>
+                            <div class="pt-2">
+                                <a href="#join" class="inline-flex items-center justify-center px-7 py-3 text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 active:scale-95 transition-all duration-200 rounded-full shadow-lg">
+                                    Get Started
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Right UI Graphic Simulation (Calendar & Appointment UI Widget) -->
+                        <div class="lg:col-span-6 relative flex justify-center lg:justify-end">
+                            
+                            <div class="w-full max-w-md bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-2xl border border-white/60 space-y-4 text-xs sm:text-sm">
+                                
+                                <!-- Top Calendar Bar -->
+                                <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                                    <span class="font-bold text-slate-800 text-sm">Monday, 28 aug 2024</span>
+                                    <div class="flex items-center gap-1 text-slate-500 text-xs bg-slate-100 px-2.5 py-1 rounded-md">
+                                        <span>&lt; Today &gt;</span>
+                                    </div>
+                                </div>
+
+                                <!-- Doctor Schedule Tags & Time Slots -->
+                                <div class="space-y-2.5">
+                                    
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-slate-400 w-10 text-xs">8:00</span>
+                                        <div class="flex-1 bg-teal-100/70 border border-teal-200 text-teal-800 font-semibold px-3 py-2 rounded-lg flex items-center justify-between">
+                                            <span>✓ Nick Mertense</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-10"></span>
+                                        <div class="flex-1 bg-slate-800 text-white font-semibold px-3 py-2 rounded-lg flex items-center justify-between shadow-sm">
+                                            <span>✓ Micheel Scott</span>
+                                            <span class="text-xs bg-rose-500 text-white px-2 py-0.5 rounded-full font-normal">Active</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-10"></span>
+                                        <div class="flex-1 bg-teal-50 border border-teal-100 text-teal-700 font-semibold px-3 py-2 rounded-lg">
+                                            <span>✓ Nick Mertense</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Doctor Avatar Badge Popups -->
+                                <div class="pt-2 flex items-center justify-between bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                    <div class="flex items-center gap-3">
+                                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=120" alt="Doctor Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm">
+                                        <div>
+                                            <p class="font-bold text-slate-800 text-xs">Dr. James</p>
+                                            <p class="text-slate-500 text-[11px]">Cardiologist Specialist</p>
+                                        </div>
+                                    </div>
+                                    <span class="px-2.5 py-1 bg-teal-500 text-white text-xs font-medium rounded-full shadow-xs">Booked</span>
+                                </div>
+
+                            </div>
+
+                            <!-- Additional Floating Avatar Badge -->
+                            <div class="absolute -bottom-4 -left-4 hidden sm:flex items-center gap-2 bg-white p-2.5 rounded-2xl shadow-xl border border-slate-100">
+                                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=120" alt="Doctor" class="w-9 h-9 rounded-full object-cover">
+                                <div class="pr-2">
+                                    <p class="text-xs font-bold text-slate-800">Dr. Anderson</p>
+                                    <p class="text-[10px] text-teal-600 font-medium">Available Today</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- FOOTER                                     -->
+    <!-- ========================================== -->
+    <footer id="doctors" class="bg-white border-t border-slate-100 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Footer Multi-column Links -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 pb-12 border-b border-slate-100">
+                
+                <!-- Col 1: Solutions -->
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Solutions</h4>
+                    <ul class="space-y-3 text-sm font-medium text-slate-500">
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Electronic Health</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Telehealth Services</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Billing and Invoicing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 2: Company -->
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-3 text-sm font-medium text-slate-500">
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">About us</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Career</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Get In Touch -->
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Get In Touch</h4>
+                    <ul class="space-y-3 text-sm font-medium text-slate-500">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-phone text-slate-400 text-xs"></i>
+                            <span>(406) 555-0120</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-envelope text-slate-400 text-xs"></i>
+                            <a href="mailto:hlpixem@gmail.com" class="hover:text-teal-600 transition-colors">hlpixem@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-location-dot text-slate-400 text-xs mt-1"></i>
+                            <span>3517 W. Gray St. Utica,<br>Pennsylvania 57867</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Follow Us On -->
+                <div id="join">
+                    <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Follow Us On</h4>
+                    <div class="flex items-center gap-4 text-slate-600">
+                        <a href="#" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-teal-500 hover:text-white flex items-center justify-center transition-all duration-200" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-teal-500 hover:text-white flex items-center justify-center transition-all duration-200" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-teal-500 hover:text-white flex items-center justify-center transition-all duration-200" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-teal-500 hover:text-white flex items-center justify-center transition-all duration-200" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom Bar -->
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-500 font-medium">
+                
+                <!-- Copyright -->
+                <p>© 2024 OmaiI, Inc. All rights reserved</p>
+
+                <!-- Center Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-7 h-7 rounded-lg bg-teal-500 flex items-center justify-center text-white shadow-sm">
+                        <i class="fa-solid fa-heart-pulse text-xs"></i>
+                    </div>
+                    <span class="text-base font-bold text-brand-heading">Mecare</span>
+                </a>
+
+                <!-- Legal Links -->
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-teal-600 transition-colors">Terms of services</a>
+                    <a href="#" class="hover:text-teal-600 transition-colors">Privacy Policy</a>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+<nav class="flex flex-wrap justify-center gap-2 px-4 pb-8" aria-label="Страницы">
+    <a href="./index.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">1</a>
+    <a href="./index2.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">2</a>
+    <a href="./index3.html" aria-current="page" class="rounded-md bg-teal-600 px-3 py-2 text-sm text-white">3</a>
+    <a href="./index4.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">4</a>
+    <a href="./index5.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">5</a>
+    <a href="./index6.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">6</a>
+    <a href="./index7.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">7</a>
+    <a href="./index8.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">8</a>
+    <a href="./index9.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">9</a>
+    <a href="./index10.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">10</a>
+    <a href="./index11.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">11</a>
+</nav>  
+
+    <!-- ========================================== -->
+    <!-- INTERACTIVE JAVASCRIPT LOGIC               -->
+    <!-- ========================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Mobile Menu Toggle Logic
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            const toggleMobileMenu = () => {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                if (isOpen) {
+                    mobileMenu.classList.add('hidden');
+                    menuIconOpen.classList.remove('hidden');
+                    menuIconClose.classList.add('hidden');
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    menuIconOpen.classList.add('hidden');
+                    menuIconClose.classList.remove('hidden');
+                }
+            };
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            }
+
+            // Close mobile menu when clicking any nav link
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+
+            // 2. FAQ Accordion Toggle Logic
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const faqItem = toggle.closest('.faq-item');
+                    const faqContent = faqItem.querySelector('.faq-content');
+                    const faqIcon = toggle.querySelector('.faq-icon');
+
+                    const isCurrentlyHidden = faqContent.classList.contains('hidden');
+
+                    if (isCurrentlyHidden) {
+                        // Open content
+                        faqContent.classList.remove('hidden');
+                        faqIcon.textContent = '-';
+                        faqIcon.classList.remove('text-teal-400');
+                        faqIcon.classList.add('text-teal-500');
+                    } else {
+                        // Close content
+                        faqContent.classList.add('hidden');
+                        faqIcon.textContent = '+';
+                        faqIcon.classList.remove('text-teal-500');
+                        faqIcon.classList.add('text-teal-400');
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>

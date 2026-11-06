@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Mecare</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            mint: '#56C5B0',
+                            mintHover: '#44b39e',
+                            navy: '#1A2035',
+                            navyDark: '#121626',
+                            heading: '#0f172a',
+                            body: '#334155',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #334155;
+            background-color: #ffffff;
+        }
+        input, select, textarea {
+            outline: none;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-teal-100 selection:text-teal-900">
+
+    <!-- ========================================== -->
+    <!-- HEADER / NAVIGATION                        -->
+    <!-- ========================================== -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2.5 group">
+                    <div class="w-10 h-10 rounded-xl bg-[#56C5B0] flex items-center justify-center text-white shadow-md shadow-teal-500/20 group-hover:scale-105 transition-transform duration-200">
+                        <i class="fa-solid fa-heart-pulse text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight text-[#1A2035]">Mecare</span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">Home</a>
+                    <a href="#" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">Service</a>
+                    <a href="#" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">Doctors</a>
+                    <a href="#" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">Pricing</a>
+                </nav>
+
+                <!-- Action Buttons -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="#" class="text-sm font-semibold text-slate-700 hover:text-teal-600 transition-colors">Join Doctor</a>
+                    <a href="#appointment" class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-slate-900 bg-[#56C5B0] hover:bg-[#44b39e] active:scale-95 transition-all duration-200 rounded-full shadow-sm">
+                        Get Appointment
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Menu">
+                    <i id="menu-icon-open" class="fa-solid fa-bars text-xl"></i>
+                    <i id="menu-icon-close" class="fa-solid fa-xmark text-xl hidden"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-100 bg-white px-4 pt-3 pb-6 space-y-3 shadow-lg">
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-800 bg-slate-50">Home</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50">Service</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50">Doctors</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50">Pricing</a>
+            <div class="pt-4 border-t border-slate-100 flex flex-col gap-3">
+                <a href="#" class="mobile-nav-link text-center py-2 text-sm font-semibold text-slate-700">Join Doctor</a>
+                <a href="#appointment" class="mobile-nav-link text-center w-full py-3 text-sm font-medium text-slate-900 bg-[#56C5B0] rounded-full shadow-sm">
+                    Get Appointment
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- MAIN CONTENT - TERMS OF SERVICE            -->
+    <!-- ========================================== -->
+    <main class="py-12 md:py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            
+            <!-- Document Header -->
+            <div class="space-y-3 border-b border-slate-100 pb-8">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-[#1A2035] tracking-tight">
+                    Terms of Service
+                </h1>
+                <p class="text-sm font-medium text-slate-500">
+                    Updated August 31, 2023
+                </p>
+            </div>
+
+            <!-- Provisions Highlight Box -->
+            <div class="space-y-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-800">
+                    YOUR ATTENTION IS PARTICULARLY DRAWN TO THE PROVISIONS OF:
+                </p>
+                <ul class="space-y-2 pl-5 text-sm text-slate-600 list-disc">
+                    <li>Indemnity;</li>
+                    <li>Service Provided "As Is" and limitations of liability;</li>
+                    <li>Term and Termination;</li>
+                    <li>User obligations; and</li>
+                    <li>Non refundable.</li>
+                </ul>
+            </div>
+
+            <!-- Section 1 -->
+            <section class="space-y-4 pt-4 border-t border-slate-100">
+                <h2 class="text-xl font-bold text-[#1A2035]">1. The Terms</h2>
+                
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    These terms and conditions along with any other terms or policies referenced herein (which terms or policies shall be deemed to be incorporated by reference and form an integral part hereof), as amended from time to time (the "Terms") constitute a legally binding agreement as of the Effective Date (as defined below) governing the User's access to and use of the Services and ChartMogul.
+                </p>
+                
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    These Terms are between the Owner and you, either individually, or if you are acting on behalf of your employer or pay other organization or entity (an "Employer Entity"), than "Employer Entity" (the "User", "you", "your"). If an individual represents their Employer Entity, such individual warrants, represents, and undertakes that: (i) such individual has full legal authority to bind his or her Employer Entity (as applicable) to these Terms; (ii) they have read and understand these Terms and agree to them on behalf of their Employer Entity (as applicable); and (iii) that these Terms shall bind their Employer Entity (as applicable). Without prejudice to the warranties, representations, and undertakings set out above, an Employer Entity shall be deemed to have represented that an individual is an authorized representative of the Employer Entity (as applicable) if they:
+                </p>
+
+                <ul class="space-y-2 pl-5 text-sm text-slate-600 list-disc">
+                    <li>use their Employer Entity email address when registering as a User;</li>
+                    <li>connect an Employer Entity email address to the Services;</li>
+                    <li>use their Employer Entity details when adding billing details;</li>
+                    <li>add or sync contacts or opportunities; or</li>
+                </ul>
+
+                <p class="text-sm text-slate-600 leading-relaxed pt-1">
+                    If you do not agree to comply with, and be bound by the Terms or if the person purporting to bind the User to the Terms does not have authority to bind the User, please do not access ChartMogul and/or the Services.
+                </p>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="space-y-4 pt-4 border-t border-slate-100">
+                <h2 class="text-xl font-bold text-[#1A2035]">2. Information about Mecare</h2>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Mecare analytics and revenue reporting platform which allows Users to track the financial performance of their subscription business, as well as a Customer Relationship Management tool which allows Users to manage internal and external interactions with or regarding customers and prospects.
+                </p>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="space-y-4 pt-4 border-t border-slate-100">
+                <h2 class="text-xl font-bold text-[#1A2035]">3. Content provided by the User</h2>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Users are responsible for their own data and content, and that of third parties that they share through ChartMogul, that they upload or post on or through ChartMogul, or that they transfer by any other means ("User Data"). Users warrant and represent that they have the lawful basis for third parties whose data and/or content they input or import in the course of their use of the Services or otherwise share with the Owner.
+                </p>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    The Owner does not moderate the content provided by Users or by third parties but will act if complaints are received from Users, or if orders are issued by the public authorities regarding content deemed offensive or illegal. The Owner reserves the right, without liability or prejudice to its other rights to the User, to disable the User's access if the Owner becomes aware of any use of any material that breaches the provisions of this clause.
+                </p>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="space-y-4 pt-4 border-t border-slate-100">
+                <h2 class="text-xl font-bold text-[#1A2035]">4. Registration</h2>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    In order to use the Services or any part of it, Users must accept these Terms in full and register in a truthful and complete manner by providing all the required information in the relevant registration form. All personal data will be processed in accordance with the Privacy Policy. Users are responsible for keeping their login credentials confidential.
+                </p>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    After registering on ChartMogul, subject to the restrictions set out in these Terms, Users can import User Data stored in third-party services of their choice supported by ChartMogul into the application. Users may also import User Data into the application by uploading it via ChartMogul's APIs or simply by manually adding it into the application user interface.
+                </p>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    The Owner shall be entitled to make changes to the Services and significant changes shall be notified to the User.
+                </p>
+            </section>
+
+            <!-- Section 5 -->
+            <section class="space-y-4 pt-4 border-t border-slate-100">
+                <h2 class="text-xl font-bold text-[#1A2035]">5. Term and Termination</h2>
+                <p class="text-xs uppercase font-medium text-slate-600 leading-relaxed tracking-wide">
+                    ALL PAID SUBSCRIPTIONS SHALL, UNLESS OTHERWISE AGREED BETWEEN THE OWNER AND THE USER IN A SERVICE ORDER, BE RECURRING SUBSCRIPTIONS WHICH RENEW AUTOMATICALLY AT THE END OF EACH BILLING PERIOD THROUGH THE SAME PAYMENT METHOD THAT THE USER CHOSE OR ON THE SUBSCRIPTION DATE. THE RENEWED SUBSCRIPTION WILL LAST FOR THE SAME PERIOD OF TIME AS THE ORIGINAL BILLING PERIOD (FOR THE AVOIDANCE OF DOUBT, IF THE ORIGINAL BILLING PERIOD IS ONE CALENDAR MONTH, EACH RENEWAL PERIOD SHALL BE ONE CALENDAR MONTH).
+                </p>
+                <p class="text-xs uppercase font-medium text-slate-600 leading-relaxed tracking-wide">
+                    OTHER PARTY MAY CANCEL A SUBSCRIPTION WITH EFFECT FROM THE END OF THE THEN CURRENT BILLING PERIOD BY NOTICE IN WRITING TO THE OTHER PARTY, IN WHICH CASE THE SUBSCRIPTION WILL NOT RENEW AT THE END OF THAT BILLING PERIOD. CANCELLATION REQUESTS MAY TAKE UP TO 5 DAYS TO PROCESS.
+                </p>
+                <p class="text-xs uppercase font-medium text-slate-600 leading-relaxed tracking-wide">
+                    IF ANY OF THE FOLLOWING EVENTS OCCUR, THE OWNER SHALL HAVE THE RIGHT TO SUSPEND OR TERMINATE THE USER'S SUBSCRIPTION WITHOUT NOTICE:
+                </p>
+                
+                <ul class="space-y-2 pl-5 text-xs font-medium text-slate-600 list-disc uppercase tracking-wide">
+                    <li>A BREACH OF ANY OF THE TERMS BY THE USER OR ANY OF THE ACCOUNT USERS;</li>
+                    <li>THE USER IS, OR IS DEEMED FOR THE PURPOSES OF ANY RELEVANT LAW TO BE, UNABLE TO PAY ITS DEBTS AS THEY FALL DUE OR TO BE INSOLVENT;</li>
+                    <li>ANY LIQUIDATOR, PROVISIONAL LIQUIDATOR, RECEIVER, OR EXAMINER IS APPOINTED TO OR IN RESPECT OF THE USER OR ANY OF ITS ASSETS OR ANYTHING ANALOGOUS TO ANY OF THE FOREGOING UNDER THE LAW OF ANY JURISDICTION OCCURS IN RELATION TO THE USER.</li>
+                </ul>
+
+                <p class="text-xs uppercase font-medium text-slate-600 leading-relaxed tracking-wide pt-2">
+                    THE PROVISIONS OF THIS CLAUSE, "TERM AND TERMINATION" AND THE CLAUSES ENTITLED "INDEMNITY", "SERVICES PROVIDED 'AS IS' AND LIMITATIONS OF LIABILITY", "GOVERNING LAW", "CUSTOMER OBLIGATIONS", AND "CONTENT PROVIDED BY THE USERS" SHALL SURVIVE THE TERMINATION OF ANY SUBSCRIPTION, TRIAL, OR OTHER USE OF SERVICES OR CHARTMOGUL, HOWEVER IT ARISES, AND SHALL CONTINUE TO BIND THE PARTIES OR THE RELEVANT PARTY (AS APPLICABLE) WITHOUT LIMIT IN TIME.
+                </p>
+                <p class="text-xs uppercase font-medium text-slate-600 leading-relaxed tracking-wide">
+                    WITHOUT PREJUDICE TO ANY OTHER RIGHT THAT THE OWNER MAY HAVE, IT MAY SUSPEND THE SERVICES OR ANY PART THEREOF UPON WRITTEN NOTICE TO THE USER WHERE:
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- SCHEDULE APPOINTMENT CTA BANNER            -->
+    <!-- ========================================== -->
+    <section id="appointment" class="py-12 md:py-16 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="relative bg-gradient-to-r from-[#56C5B0] via-[#50d6ba] to-[#40cbb0] rounded-3xl p-8 sm:p-12 lg:p-16 overflow-hidden shadow-xl text-slate-900">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                    
+                    <!-- Left Content -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                            Schedule Your<br>Appointment with us
+                        </h2>
+                        <p class="text-slate-800 text-sm sm:text-base font-medium leading-relaxed max-w-lg">
+                            We're here to help! Whether you have inquiries about our services, need assistance, or simply want more information, feel free to reach out.
+                        </p>
+                        <div class="pt-2">
+                            <button onclick="alert('Redirecting to appointment booking...');" class="inline-flex items-center justify-center px-7 py-3 text-sm font-semibold text-white bg-[#1A2035] hover:bg-slate-900 active:scale-95 transition-all duration-200 rounded-full shadow-md">
+                                Get Started
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Scheduling UI Card Mockup -->
+                    <div class="lg:col-span-6 relative flex justify-center lg:justify-end">
+                        
+                        <div class="w-full max-w-md bg-white/95 backdrop-blur-md rounded-2xl p-5 shadow-2xl border border-white/60 space-y-4 text-xs sm:text-sm">
+                            
+                            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                                <span class="font-bold text-slate-800">Monday, 28 aug 2024</span>
+                                <span class="text-slate-500 text-xs bg-slate-100 px-2.5 py-1 rounded-md">&lt; Today &gt;</span>
+                            </div>
+
+                            <div class="space-y-2.5">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-slate-400 w-8 text-xs">8:00</span>
+                                    <div class="flex-1 bg-teal-100/80 border border-teal-200 text-teal-800 font-semibold px-3 py-2 rounded-lg">
+                                        ✓ Nick Mertense
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-2">
+                                    <span class="w-8"></span>
+                                    <div class="flex-1 bg-slate-800 text-white font-semibold px-3 py-2 rounded-lg flex items-center justify-between">
+                                        <span>✓ Micheel Scott</span>
+                                        <span class="text-[10px] bg-rose-500 text-white px-2 py-0.5 rounded-full">Active</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-2">
+                                    <span class="w-8"></span>
+                                    <div class="flex-1 bg-teal-50 border border-teal-100 text-teal-700 font-semibold px-3 py-2 rounded-lg">
+                                        ✓ Nick Mertense
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-2 flex items-center justify-between bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=120" alt="Doctor" class="w-9 h-9 rounded-full object-cover">
+                                    <div>
+                                        <p class="font-bold text-slate-800 text-xs">Dr. James</p>
+                                        <p class="text-slate-500 text-[10px]">Cardiologist Specialist</p>
+                                    </div>
+                                </div>
+                                <span class="px-2 py-1 bg-[#56C5B0] text-slate-900 text-xs font-semibold rounded-full">Booked</span>
+                            </div>
+
+                        </div>
+
+                        <div class="absolute -bottom-4 -left-2 hidden sm:flex items-center gap-2.5 bg-white p-2.5 rounded-2xl shadow-xl border border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=120" alt="Doctor" class="w-9 h-9 rounded-full object-cover">
+                            <div class="pr-2">
+                                <p class="text-xs font-bold text-slate-800">Dr. Anderson</p>
+                                <p class="text-[10px] text-teal-600 font-medium">Available Today</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- FOOTER                                     -->
+    <!-- ========================================== -->
+    <footer class="bg-white border-t border-slate-100 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 pb-12 border-b border-slate-100">
+                
+                <!-- Solutions -->
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Solutions</h4>
+                    <ul class="space-y-3 text-sm font-medium text-slate-500">
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Electronic Health</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Telehealth Services</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Billing and invoicing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-3 text-sm font-medium text-slate-500">
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">About us</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Career</a></li>
+                    </ul>
+                </div>
+
+                <!-- Get In Touch -->
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Get In Touch</h4>
+                    <ul class="space-y-3 text-sm font-medium text-slate-500">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-phone text-slate-400 text-xs"></i>
+                            <span>(406) 555-0120</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-envelope text-slate-400 text-xs"></i>
+                            <a href="mailto:hipixem@gmail.com" class="hover:text-teal-600 transition-colors">hipixem@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-location-dot text-slate-400 text-xs mt-1"></i>
+                            <span>3517 W. Gray St. Utica,<br>Pennsylvania 57867</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Follow Us On -->
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Follow Us On</h4>
+                    <div class="flex items-center gap-4 text-slate-600">
+                        <a href="#" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-[#56C5B0] hover:text-slate-900 flex items-center justify-center transition-all" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-[#56C5B0] hover:text-slate-900 flex items-center justify-center transition-all" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-[#56C5B0] hover:text-slate-900 flex items-center justify-center transition-all" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-[#56C5B0] hover:text-slate-900 flex items-center justify-center transition-all" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-500 font-medium">
+                <p>© 2024 Omail, Inc. All rights reserved</p>
+
+                <!-- Center Logo -->
+                <a href="#" class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-[#56C5B0] flex items-center justify-center text-white">
+                        <i class="fa-solid fa-heart-pulse text-xs"></i>
+                    </div>
+                    <span class="text-base font-bold text-slate-900">Mecare</span>
+                </a>
+
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-teal-600 transition-colors">Terms of services</a>
+                    <a href="#" class="hover:text-teal-600 transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+
+        </div>
+        </footer>
+
+<nav class="flex flex-wrap justify-center gap-2 px-4 pb-8" aria-label="Страницы">
+    <a href="./index.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">1</a>
+    <a href="./index2.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">2</a>
+    <a href="./index3.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">3</a>
+    <a href="./index4.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">4</a>
+    <a href="./index5.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">5</a>
+    <a href="./index6.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">6</a>
+    <a href="./index7.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">7</a>
+    <a href="./index8.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">8</a>
+    <a href="./index9.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">9</a>
+    <a href="./index10.html" aria-current="page" class="rounded-md bg-teal-600 px-3 py-2 text-sm text-white">10</a>
+    <a href="./index11.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">11</a>
+</nav>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle Logic
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    const isOpen = !mobileMenu.classList.contains('hidden');
+                    mobileMenu.classList.toggle('hidden');
+                    menuIconOpen.classList.toggle('hidden', !isOpen);
+                    menuIconClose.classList.toggle('hidden', isOpen);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevating Patient Engagement Through Innovative Technology Solutions - Mecare</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            mint: '#56C5B0',
+                            mintHover: '#44b39e',
+                            navy: '#1A2035',
+                            navyDark: '#121626',
+                            heading: '#0f172a',
+                            subheading: '#475569',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #4b5563;
+            background-color: #ffffff;
+        }
+        input, select, textarea {
+            outline: none;
+        }
+        .toc-link.active {
+            color: #56C5B0;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-teal-100 selection:text-teal-900">
+
+    <!-- ========================================== -->
+    <!-- HEADER / NAVIGATION                        -->
+    <!-- ========================================== -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2.5 group">
+                    <div class="w-10 h-10 rounded-xl bg-[#56C5B0] flex items-center justify-center text-white shadow-md shadow-teal-500/20 group-hover:scale-105 transition-transform duration-200">
+                        <i class="fa-solid fa-heart-pulse text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight text-[#1A2035]">Mecare</span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">Home</a>
+                    <a href="#" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">Service</a>
+                    <a href="#" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">Doctors</a>
+                    <a href="#" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">Pricing</a>
+                </nav>
+
+                <!-- Action Buttons -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="#" class="text-sm font-semibold text-slate-700 hover:text-teal-600 transition-colors">Join Doctor</a>
+                    <a href="#appointment" class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-slate-900 bg-[#56C5B0] hover:bg-[#44b39e] active:scale-95 transition-all duration-200 rounded-full shadow-sm">
+                        Get Appointment
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Menu">
+                    <i id="menu-icon-open" class="fa-solid fa-bars text-xl"></i>
+                    <i id="menu-icon-close" class="fa-solid fa-xmark text-xl hidden"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-100 bg-white px-4 pt-3 pb-6 space-y-3 shadow-lg">
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-800 bg-slate-50">Home</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50">Service</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50">Doctors</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50">Pricing</a>
+            <div class="pt-4 border-t border-slate-100 flex flex-col gap-3">
+                <a href="#" class="mobile-nav-link text-center py-2 text-sm font-semibold text-slate-700">Join Doctor</a>
+                <a href="#appointment" class="mobile-nav-link text-center w-full py-3 text-sm font-medium text-slate-900 bg-[#56C5B0] rounded-full shadow-sm">
+                    Get Appointment
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-10 md:py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Main Grid: Left Article Content, Right Sidebar -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+                
+                <!-- ARTICLE CONTENT (LEFT 8 COLS) -->
+                <article class="lg:col-span-8 space-y-8">
+                    
+                    <!-- Article Meta & Title Header -->
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 text-xs text-slate-500 font-medium">
+                            <div class="flex items-center gap-2">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=120" alt="Joanna Kaminska" class="w-7 h-7 rounded-full object-cover">
+                                <span class="text-slate-800 font-semibold text-sm">Joanna Kaminska</span>
+                            </div>
+                            <span>•</span>
+                            <span class="text-slate-400">26 august 2024</span>
+                        </div>
+
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1A2035] leading-tight tracking-tight">
+                            Elevating Patient Engagement Through Innovative Technology Solutions
+                        </h1>
+
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            Delve into the numerous advantages that medical management software brings to healthcare practices. By streamlining operations, it significantly enhances efficiency, reduces the administrative load on staff, and allows healthcare providers to focus more on patient care. This software not only automates routine tasks but also ensures accurate data management, leading to better decision-making and improved patient outcomes. Additionally, we explore popular software solutions that are trusted by professionals in the industry, providing real-world examples of how these tools can revolutionize your practice.
+                        </p>
+                    </div>
+
+                    <!-- Section: Introduction -->
+                    <section id="sec-intro" class="scroll-mt-28 space-y-4 pt-2 border-t border-slate-100">
+                        <h2 class="text-2xl font-bold text-[#1A2035]">Introduction</h2>
+                        <div class="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                            <p>
+                                Imagine a life where vitality is not just an occasional burst of energy, but a steady, reliable companion that accompanies you through every stage of your journey. Picture waking up each day with a sense of well-being that extends beyond the physical, touching every aspect of your existence.
+                            </p>
+                            <p>
+                                This is the essence of lifelong wellness—a dynamic state of health and happiness that is achieved through a thoughtful combination of mindful choices, intentional habits, and a profound understanding of your body and mind's unique needs.
+                            </p>
+                            <p>
+                                Lifelong wellness is not about chasing perfection or adhering to rigid standards. Instead, it's about embracing a holistic approach to living, where every decision you make contributes to your overall well-being. It's the conscious effort to nourish your body with wholesome foods, engage in physical activities that bring you joy, and cultivate mental and emotional resilience. It's the recognition that true wellness is a journey, one that requires patience, self-compassion, and a willingness to learn and adapt.
+                            </p>
+                            <p>
+                                Ultimately, lifelong wellness is about living with intention and purpose, creating a life where vitality is a constant presence, enriching every moment. It's about thriving, not just surviving, and enjoying the fullness of life with energy, clarity, and joy. This journey is yours to define, and it begins with the commitment to care for yourself in the ways that matter most. So, imagine this life—where every day is an opportunity to nurture your well-being—and take the first step towards making it your reality.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Article Image Gallery / Highlight -->
+                    <div class="my-8 rounded-2xl overflow-hidden bg-slate-100 shadow-sm border border-slate-100">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200" alt="Medical team examining patient" class="w-full h-auto object-cover max-h-[460px]">
+                    </div>
+
+                    <!-- Section: Preventive Care -->
+                    <section id="sec-preventive" class="scroll-mt-28 space-y-4 pt-4 border-t border-slate-100">
+                        <h2 class="text-2xl font-bold text-[#1A2035]">Preventive Care: Your Wellness Blueprint</h2>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            Preventive Care: Your Wellness Blueprint is about laying the foundation for a healthier future. By prioritizing regular check-ups, screenings, and proactive health measures, you can catch potential issues early and maintain your well-being. This approach empowers you to take control of your health, ensuring that you stay ahead of possible concerns and live a vibrant, balanced life. It's not just about avoiding illness—it's about creating a personalized wellness plan that supports your long-term vitality.
+                        </p>
+
+                        <div class="space-y-2 pt-2">
+                            <h3 class="font-bold text-[#1A2035] text-sm sm:text-base">• Key Points:</h3>
+                            <ul class="space-y-2 pl-5 text-sm sm:text-base text-slate-600 list-disc">
+                                <li>Crafting a personalized wellness plan with regular check-ups</li>
+                                <li>Understanding your body's signals and taking early action</li>
+                                <li>Embracing preventive practices as a lifestyle, not a task</li>
+                            </ul>
+                        </div>
+
+                        <p class="text-sm sm:text-base text-slate-700 font-semibold pt-1">
+                            • Takeaway: <span class="font-normal text-slate-600">Make preventive care your wellness foundation, ensuring you're always one step ahead on your health journey.</span>
+                        </p>
+                    </section>
+
+                    <!-- Section: Fueling Your Body -->
+                    <section id="sec-nourishment" class="scroll-mt-28 space-y-4 pt-4 border-t border-slate-100">
+                        <h2 class="text-2xl font-bold text-[#1A2035]">Fueling Your Body: The Art of Nourishment</h2>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            Fueling Your Body: The Art of Nourishment explores the crucial role of diet in maintaining overall health and vitality. It's not just about eating; it's about understanding how to nourish your body with the right balance of nutrients. This approach goes beyond basic nutrition, emphasizing the art of selecting and preparing foods that energize, heal, and sustain you. Discover how mindful eating, a diverse diet, and personalized nutrition can transform your well-being and help you thrive every day.
+                        </p>
+
+                        <div class="space-y-2 pt-2">
+                            <h3 class="font-bold text-[#1A2035] text-sm sm:text-base">• Key Points:</h3>
+                            <ul class="space-y-2 pl-5 text-sm sm:text-base text-slate-600 list-disc">
+                                <li>Curating a colorful and diverse diet that excites your senses</li>
+                                <li>Balancing indulgence with intention to maintain joy in eating</li>
+                                <li>Mindful eating practices that connect you with your body's needs</li>
+                            </ul>
+                        </div>
+
+                        <p class="text-sm sm:text-base text-slate-700 font-semibold pt-1">
+                            • Takeaway: <span class="font-normal text-slate-600">Treat your diet as a daily ritual of nourishment, where every meal is a step toward lifelong vitality.</span>
+                        </p>
+                    </section>
+
+                    <!-- Section: Movement -->
+                    <section id="sec-movement" class="scroll-mt-28 space-y-4 pt-4 border-t border-slate-100">
+                        <h2 class="text-2xl font-bold text-[#1A2035]">Movement: The Rhythm of Life</h2>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            Movement: The Rhythm of Life explores the essential role that physical activity plays in maintaining a vibrant and balanced lifestyle. Just as music has its rhythm, your body thrives on movement. Whether it's through dancing, walking, or engaging in sports, finding a form of exercise that resonates with you can energize your life and enhance your overall well-being. Embracing movement as a daily practice not only supports physical health but also boosts mental clarity and emotional resilience, creating a harmonious rhythm that keeps you thriving in all aspects of life.
+                        </p>
+
+                        <div class="space-y-2 pt-2">
+                            <h3 class="font-bold text-[#1A2035] text-sm sm:text-base">• Key Points:</h3>
+                            <ul class="space-y-2 pl-5 text-sm sm:text-base text-slate-600 list-disc">
+                                <li>Curating a colorful and diverse diet that excites your senses</li>
+                                <li>Integrating activity into your daily life effortlessly</li>
+                                <li>Celebrating small victories in your physical journey</li>
+                            </ul>
+                        </div>
+
+                        <p class="text-sm sm:text-base text-slate-700 font-semibold pt-1">
+                            • Takeaway: <span class="font-normal text-slate-600">Let movement be your rhythm of life, a joyful expression that keeps you energized and connected.</span>
+                        </p>
+                    </section>
+
+                    <!-- Section: Mental Wellness -->
+                    <section id="sec-mental" class="scroll-mt-28 space-y-4 pt-4 border-t border-slate-100">
+                        <h2 class="text-2xl font-bold text-[#1A2035]">Mental Wellness: Cultivating Inner Peace</h2>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            True wellness begins within. Cultivating mental and emotional health is about creating an inner sanctuary where peace and resilience thrive. Whether it's through meditation, journaling, mindfulness, or engaging in sports, finding a form of practice that resonates with you can energize your life and enhance your overall well-being. Embracing movement as a daily practice not only supports physical health but also boosts mental clarity and emotional resilience, creating a harmonious rhythm that keeps you thriving in all aspects of life.
+                        </p>
+
+                        <div class="space-y-2 pt-2">
+                            <h3 class="font-bold text-[#1A2035] text-sm sm:text-base">• Key Points:</h3>
+                            <ul class="space-y-2 pl-5 text-sm sm:text-base text-slate-600 list-disc">
+                                <li>Building a mental wellness toolkit with meditation, journaling, and mindfulness</li>
+                                <li>Nurturing relationships that uplift and support you</li>
+                                <li>Knowing when to reach out and seek guidance for deeper healing</li>
+                            </ul>
+                        </div>
+
+                        <p class="text-sm sm:text-base text-slate-700 font-semibold pt-1">
+                            • Takeaway: <span class="font-normal text-slate-600">Your mental wellness is your inner sanctuary—nurture it with practices that bring you peace and clarity.</span>
+                        </p>
+                    </section>
+
+                    <!-- Section: Sleep -->
+                    <section id="sec-sleep" class="scroll-mt-28 space-y-4 pt-4 border-t border-slate-100">
+                        <h2 class="text-2xl font-bold text-[#1A2035]">Sleep: The Magic of Restoration</h2>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            Sleep serves as your body's extraordinary reset mechanism, a crucial period where the magic of rejuvenation unfolds. During this essential time, your body undertakes vital healing processes, restoring and repairing itself from the day's wear and tear. It's a period where your mind and body align to dream, refresh, and recharge, setting the stage for optimal functioning and vitality for the day ahead. Embracing quality sleep means more than just resting—it's about preparing your entire system to thrive and face the new challenges and opportunities of tomorrow with renewed energy and well-being.
+                        </p>
+
+                        <div class="space-y-2 pt-2">
+                            <h3 class="font-bold text-[#1A2035] text-sm sm:text-base">• Key Points:</h3>
+                            <ul class="space-y-2 pl-5 text-sm sm:text-base text-slate-600 list-disc">
+                                <li>Creating a sleep sanctuary that invites deep rest</li>
+                                <li>Understanding the cycles of sleep and how to optimize them</li>
+                                <li>Embracing bedtime rituals that signal your body to unwind</li>
+                            </ul>
+                        </div>
+
+                        <p class="text-sm sm:text-base text-slate-700 font-semibold pt-1">
+                            • Takeaway: <span class="font-normal text-slate-600">Sleep is the magical ingredient for lifelong wellness—protect it, prioritize it, and let it restore you.</span>
+                        </p>
+
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed pt-4">
+                            Lifelong wellness is a journey of discovery, where every choice, habit, and practice contributes to the vibrant life you deserve. It's not about following a rigid path but about unlocking the secrets that work uniquely for you. Embrace this journey with curiosity, joy, and a commitment to living your best life, every day.
+                        </p>
+                    </section>
+
+                </article>
+
+                <!-- RIGHT SIDEBAR (4 COLS) -->
+                <aside class="lg:col-span-4 space-y-8">
+                    <div class="sticky top-28 space-y-8">
+                        
+                        <!-- Top Doctor Banner Image -->
+                        <div class="rounded-2xl overflow-hidden shadow-sm bg-slate-100 border border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800" alt="Doctor ultrasound examination" class="w-full h-48 sm:h-56 object-cover">
+                        </div>
+
+                        <!-- Table of Contents Accordion Menu -->
+                        <div class="bg-white rounded-2xl border border-slate-200/80 p-5 shadow-sm space-y-1">
+                            
+                            <a href="#sec-intro" class="toc-link flex items-center justify-between p-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors">
+                                <span>Introduction</span>
+                                <i class="fa-solid fa-chevron-up text-xs text-slate-400"></i>
+                            </a>
+
+                            <a href="#sec-preventive" class="toc-link flex items-center justify-between p-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50 transition-colors">
+                                <span>Preventive Care: Your Wellness Blueprint</span>
+                                <i class="fa-solid fa-chevron-down text-xs text-slate-400"></i>
+                            </a>
+
+                            <a href="#sec-nourishment" class="toc-link flex items-center justify-between p-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50 transition-colors">
+                                <span>Fueling Your Body: The Art of Nourishment</span>
+                                <i class="fa-solid fa-chevron-down text-xs text-slate-400"></i>
+                            </a>
+
+                            <a href="#sec-movement" class="toc-link flex items-center justify-between p-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50 transition-colors">
+                                <span>Movement: The Rhythm of Life</span>
+                                <i class="fa-solid fa-chevron-down text-xs text-slate-400"></i>
+                            </a>
+
+                            <a href="#sec-mental" class="toc-link flex items-center justify-between p-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50 transition-colors">
+                                <span>Mental Wellness: Cultivating Inner Peace</span>
+                                <i class="fa-solid fa-chevron-down text-xs text-slate-400"></i>
+                            </a>
+
+                            <a href="#sec-sleep" class="toc-link flex items-center justify-between p-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50 transition-colors">
+                                <span>Sleep: The Magic of Restoration</span>
+                                <i class="fa-solid fa-chevron-down text-xs text-slate-400"></i>
+                            </a>
+
+                        </div>
+
+                        <!-- Weekly Newsletter Block -->
+                        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 space-y-4 shadow-sm">
+                            <h3 class="text-base font-bold text-[#1A2035]">Weekly newsletter</h3>
+                            <form onsubmit="event.preventDefault(); alert('Subscribed to weekly newsletter!');" class="space-y-3">
+                                <div>
+                                    <input type="email" placeholder="Enter your email" required class="w-full bg-white border border-slate-200 rounded-full px-4 py-3 text-xs text-slate-800 placeholder-slate-400 focus:border-[#56C5B0] transition-colors">
+                                </div>
+                                <button type="submit" class="w-full py-3 bg-[#1A2035] hover:bg-[#121626] text-white text-xs font-semibold rounded-full shadow transition-all active:scale-95">
+                                    Subscribe
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
+                </aside>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- SCHEDULE APPOINTMENT CTA BANNER            -->
+    <!-- ========================================== -->
+    <section id="appointment" class="py-12 md:py-16 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="relative bg-gradient-to-r from-[#56C5B0] via-[#50d6ba] to-[#40cbb0] rounded-3xl p-8 sm:p-12 lg:p-16 overflow-hidden shadow-xl text-slate-900">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                    
+                    <!-- Left Content -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                            Schedule Your<br>Appointment with us
+                        </h2>
+                        <p class="text-slate-800 text-sm sm:text-base font-medium leading-relaxed max-w-lg">
+                            We're here to help! Whether you have inquiries about our services, need assistance, or simply want more information, feel free to reach out.
+                        </p>
+                        <div class="pt-2">
+                            <button onclick="alert('Redirecting to appointment booking...');" class="inline-flex items-center justify-center px-7 py-3 text-sm font-semibold text-white bg-[#1A2035] hover:bg-slate-900 active:scale-95 transition-all duration-200 rounded-full shadow-md">
+                                Get Started
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Scheduling UI Card Mockup -->
+                    <div class="lg:col-span-6 relative flex justify-center lg:justify-end">
+                        
+                        <div class="w-full max-w-md bg-white/95 backdrop-blur-md rounded-2xl p-5 shadow-2xl border border-white/60 space-y-4 text-xs sm:text-sm">
+                            
+                            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                                <span class="font-bold text-slate-800">Monday, 28 aug 2024</span>
+                                <span class="text-slate-500 text-xs bg-slate-100 px-2.5 py-1 rounded-md">&lt; Today &gt;</span>
+                            </div>
+
+                            <div class="space-y-2.5">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-slate-400 w-8 text-xs">8:00</span>
+                                    <div class="flex-1 bg-teal-100/80 border border-teal-200 text-teal-800 font-semibold px-3 py-2 rounded-lg">
+                                        ✓ Nick Mertense
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-2">
+                                    <span class="w-8"></span>
+                                    <div class="flex-1 bg-slate-800 text-white font-semibold px-3 py-2 rounded-lg flex items-center justify-between">
+                                        <span>✓ Micheel Scott</span>
+                                        <span class="text-[10px] bg-rose-500 text-white px-2 py-0.5 rounded-full">Active</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-2">
+                                    <span class="w-8"></span>
+                                    <div class="flex-1 bg-teal-50 border border-teal-100 text-teal-700 font-semibold px-3 py-2 rounded-lg">
+                                        ✓ Nick Mertense
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-2 flex items-center justify-between bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=120" alt="Doctor" class="w-9 h-9 rounded-full object-cover">
+                                    <div>
+                                        <p class="font-bold text-slate-800 text-xs">Dr. James</p>
+                                        <p class="text-slate-500 text-[10px]">Cardiologist Specialist</p>
+                                    </div>
+                                </div>
+                                <span class="px-2 py-1 bg-[#56C5B0] text-slate-900 text-xs font-semibold rounded-full">Booked</span>
+                            </div>
+
+                        </div>
+
+                        <div class="absolute -bottom-4 -left-2 hidden sm:flex items-center gap-2.5 bg-white p-2.5 rounded-2xl shadow-xl border border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=120" alt="Doctor" class="w-9 h-9 rounded-full object-cover">
+                            <div class="pr-2">
+                                <p class="text-xs font-bold text-slate-800">Dr. Anderson</p>
+                                <p class="text-[10px] text-teal-600 font-medium">Available Today</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- FOOTER                                     -->
+    <!-- ========================================== -->
+    <footer class="bg-white border-t border-slate-100 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 pb-12 border-b border-slate-100">
+                
+                <!-- Solutions -->
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Solutions</h4>
+                    <ul class="space-y-3 text-sm font-medium text-slate-500">
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Electronic Health</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Telehealth Services</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Billing and invoicing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-3 text-sm font-medium text-slate-500">
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">About us</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition-colors">Career</a></li>
+                    </ul>
+                </div>
+
+                <!-- Get In Touch -->
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Get In Touch</h4>
+                    <ul class="space-y-3 text-sm font-medium text-slate-500">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-phone text-slate-400 text-xs"></i>
+                            <span>(406) 555-0120</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-envelope text-slate-400 text-xs"></i>
+                            <a href="mailto:hipixem@gmail.com" class="hover:text-teal-600 transition-colors">hipixem@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-location-dot text-slate-400 text-xs mt-1"></i>
+                            <span>3517 W. Gray St. Utica,<br>Pennsylvania 57867</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Follow Us On -->
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Follow Us On</h4>
+                    <div class="flex items-center gap-4 text-slate-600">
+                        <a href="#" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-[#56C5B0] hover:text-slate-900 flex items-center justify-center transition-all" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-[#56C5B0] hover:text-slate-900 flex items-center justify-center transition-all" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-[#56C5B0] hover:text-slate-900 flex items-center justify-center transition-all" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-[#56C5B0] hover:text-slate-900 flex items-center justify-center transition-all" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-500 font-medium">
+                <p>© 2024 Omail, Inc. All rights reserved</p>
+
+                <!-- Center Logo -->
+                <a href="#" class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-[#56C5B0] flex items-center justify-center text-white">
+                        <i class="fa-solid fa-heart-pulse text-xs"></i>
+                    </div>
+                    <span class="text-base font-bold text-slate-900">Mecare</span>
+                </a>
+
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-teal-600 transition-colors">Terms of services</a>
+                    <a href="#" class="hover:text-teal-600 transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+
+        </div>
+        </footer>
+
+<nav class="flex flex-wrap justify-center gap-2 px-4 pb-8" aria-label="Страницы">
+    <a href="./index.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">1</a>
+    <a href="./index2.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">2</a>
+    <a href="./index3.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">3</a>
+    <a href="./index4.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">4</a>
+    <a href="./index5.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">5</a>
+    <a href="./index6.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">6</a>
+    <a href="./index7.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">7</a>
+    <a href="./index8.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">8</a>
+    <a href="./index9.html" aria-current="page" class="rounded-md bg-teal-600 px-3 py-2 text-sm text-white">9</a>
+    <a href="./index10.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">10</a>
+    <a href="./index11.html" class="rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">11</a>
+</nav>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    const isOpen = !mobileMenu.classList.contains('hidden');
+                    mobileMenu.classList.toggle('hidden');
+                    menuIconOpen.classList.toggle('hidden', !isOpen);
+                    menuIconClose.classList.toggle('hidden', isOpen);
+                });
+            }
+
+            // Highlight Active TOC Link on Scroll
+            const sections = document.querySelectorAll('main section[id]');
+            const tocLinks = document.querySelectorAll('.toc-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    if (window.scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
